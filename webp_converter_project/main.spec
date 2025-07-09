@@ -4,8 +4,8 @@
 a = Analysis(
     ['main.py'],
     pathex=[],
-    binaries=[('img2webp.exe', '.')],
-    datas=[('app_icon.ico', '.')],
+    binaries=[],
+    datas=[('img2webp.exe', '.'), ('app_icon.ico', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

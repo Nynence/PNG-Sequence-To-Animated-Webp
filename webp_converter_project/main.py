@@ -7,6 +7,9 @@ from tkinter import filedialog, messagebox, ttk
 import time
 import concurrent.futures
 
+myappid = 'ADGroup.RishWebpify.Converter.1'
+ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+
 # --- TRY TO IMPORT tkinterdnd2 for drag and drop
 try:
     from tkinterdnd2 import TkinterDnD, DND_FILES
@@ -669,12 +672,10 @@ def create_root_window():
     else:
         return tk.Tk()
 
-myappid = 'ADGroup.RishWebpify.Converter.1'
-ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
 if __name__ == "__main__":
     root = create_root_window()
-    root.withdraw()   # Hide immediately!
+    root.withdraw()   # Hide window immediately
 
     import os, sys
     if getattr(sys, 'frozen', False):
@@ -688,6 +689,7 @@ if __name__ == "__main__":
         pass
 
     app = WebPConverterApp(root)
-    root.deiconify()  # Show window only after fully configured!
+    root.deiconify()  # Show window only after fully configured
     root.mainloop()
+
 
